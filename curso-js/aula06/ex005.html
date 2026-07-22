@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(69, 107, 230);
+        color: white;
+        font: normal 18pt Arial;
+    }
+</style>
+<body>
+    <h1>DOM</h1> <!--document object model-->
+    <p>resultado</p>
+    <p>Uso de <strong>dom</strong> em js</p>
+    <div id="mensagem">Clique aqui</div>
+    <br>
+    <script>
+
+        var p1 = window.document.getElementsByTagName('p')[1] //0 é o primeiro parágrafo
+        var corpo = window.document.body
+        window.document.write('Está escrito assim: ' + p1.innerText)
+        p1.style.color = 'red'
+        corpo.style.background = 'black'
+
+        window.alert(p1.innerText) //pega p estilo
+        document.write(p1.innerHTML) //pega o html
+
+        var d = window.document.getElementById('mensagem')
+        //d.innerText = 'tou aguardando'
+        d.style.background = 'pink'
+
+        var div = window.document.querySelector('#mensagem')
+        div.style.color = 'black'
+        /*
+        window.document.write('Olá, mundo!')
+        window.document.write(window.navigator.name)
+        window.document.write(window.document.URL)*/
+
+
+
+    </script>
+</body>
+</html>

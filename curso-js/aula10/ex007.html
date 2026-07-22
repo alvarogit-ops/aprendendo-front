@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtrair</title>
+</head>
+<style>
+</style>
+<body>
+   <h2>Subtração</h2>
+
+   <input type="number" name="input1" id="input1"> -
+   <input type="number" name="input2" id="input2">
+   <button id="meubotao">=</button>
+   <p id="resultado"></p>
+     <script>
+        var botao = window.document.getElementById('meubotao')
+        var resultado = window.document.getElementById('resultado')
+        botao.addEventListener('click', subtrair)
+
+        function subtrair(){
+            var input1 = window.document.getElementById('input1')
+            var input2 = window.document.getElementById('input2')
+            var n1 = Number(input1.value)
+            var n2 = Number(input2.value)
+            var sub = n1 - n2
+            resultado.innerText = `${sub}`
+            
+
+
+         }
+
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos dom</title>
+</head>
+<style>
+    #area{
+        background-color: rgb(61, 87, 61);
+        color: white;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+
+    }
+</style>
+<body>
+    <div id="area"> <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"!-->
+        Interaja...
+    </div>
+
+    <script>
+        //Agora area serve pra todo código abaixo
+
+        var area = window.document.getElementById('area') //pode dar problema de memória
+
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        
+        function clicar(){
+            area.innerText = 'Clicou!'
+            area.style.background = 'red'
+
+        }
+
+        function entrar(){
+            area.innerText = 'Entrou!'
+
+        }
+            function sair(){
+                area.innerText = 'Saiu!'
+                area.style.background = 'rgb(61, 87, 61)'
+        }
+        
+    </script>
+</body>
+</html>
