@@ -1,0 +1,36 @@
+<!--Verificando de que país a pessoa é-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de País</title>
+</head>
+<body>
+    <h1>País</h1>
+    <input type="text" name="pais" id="pais">
+    <button id="verificar">Verificar</button>
+    <div id="verificar">Resultado: </div> <!--ID sempre é único-->
+    <script>
+        var botao = document.querySelector('button#verificar')
+        botao.addEventListener('click', resultado)
+
+        function resultado(){
+            var verificacao = document.querySelector('div#verificar')
+            var pais = document.querySelector('input#pais') 
+            var entrada = pais.value //sem criar var pais, entrada n sabe quem é pais
+            var entrada_formatada = entrada.toLowerCase()
+            verificacao.innerHTML += `<p>Seu país é ${entrada}</p>` //não  existe inner.HTML
+
+            if (entrada_formatada == 'brasil') { 
+                verificacao.innerHTML += 'Você é brasileiro'
+            }
+
+            else{
+                verificacao.innerHTML += 'Você é estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>

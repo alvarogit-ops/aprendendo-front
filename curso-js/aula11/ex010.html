@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de multas</title>
+</head>
+<body>
+    <h1>Velocidade de um carro</h1>
+    Velocidade: <input type="number" name="speed" id="speed"> km/h
+    <button id="verificar"> <!--ID sempre é único-->
+     Verificar
+    </button>
+
+    <div id="resultado"> <!--ID sempre é único-->
+        Resultado: 
+    </div>
+    <script>
+
+        var botao = document.querySelector('button#verificar')
+        botao.addEventListener('click', resultado)
+        function resultado() { //faltou parenteses  depois do nome da função
+             var speed_entrada = document.querySelector('input#speed')
+             var verificar = document.querySelector('div#resultado')
+             var velocidade = Number(speed_entrada.value) //é necessário dizer quem é number e criar var, assim como speed_entrada
+             speed_entrada.innerHTML = `<p>${speed_entrada}</p>`
+             if (velocidade > 60){
+                verificar.innerHTML += '<p>Você foi multado por causa do excesso de velocidade</p>' //ao invés de document.write, e tbm é necessário atribuir +=, se não o valor some
+             }
+             verificar.innerHTML += '<p>Boa viagem! Dirija com cinto de segurança! </p>'
+        }
+    </script>
+</body>
+</html>
